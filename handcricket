@@ -1,54 +1,31 @@
 import random
-list=[1,2,3,4,5]
-while True:
-    user_input=int(input("Enter a number: "))
-    computer_choice=random.choice(list)
 
-    if user_input==computer_choice:
-        print("You lost the match!")
-        break
-    elif user_input==0:
-        print("Please Enter a valid choice!")
-        r=int(input("enter a valid choice: "))
-    elif user_input>5:
-        print('max value of int choosed is 5!')
-        y=int(input("enter a valid choice: "))
-    elif y==0:
-        print("Please Enter a valid choice!")
-        e=int(input("Enter a VALID CHOICE: "))
-    else:
-        continue
-    z=int(input("Enter choice: "))
-
-
-
-
-
-
-
-import random
-
+score = 0
 choices = [1, 2, 3, 4, 5]
 
 while True:
     try:
-        user_input = int(input("Enter a number between 1 and 5 (0 to quit): "))
+        user_input = int(input("Enter a number (1-5) or 0 to quit: "))
     except ValueError:
         print("Invalid input! Please enter a number.")
         continue
-
+    
     if user_input == 0:
-        print("Game ended by user.")
+        print("You chose to quit the game.")
         break
-    elif user_input not in choices:
+    
+    if user_input < 1 or user_input > 5:
         print("Invalid choice! Please enter a number between 1 and 5.")
         continue
-
+    
     computer_choice = random.choice(choices)
     print(f"Computer chose: {computer_choice}")
-
+    
     if user_input == computer_choice:
-        print("You lost the match!")
+        print(" You lost the match!")
         break
     else:
-        print("Safe! Try again...")
+        score += user_input
+        print(f"Bravo! Current score: {score}")
+
+print(f"Final Score: {score}")
