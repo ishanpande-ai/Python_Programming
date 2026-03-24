@@ -1,0 +1,6 @@
+print("SIMPLE INTREST CALCULATOR!")
+P=int(input("Enter principal amount: "))
+T=int(input("Enter Time(in years): "))
+R=int(input("Enter Rate percent: "))
+SI=P*T*R/100
+print(SI)
